@@ -1,15 +1,24 @@
-body {
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+#app {
   background-color: rgb(224 242 254);
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#app {
+#parent {
+  width: 75%;
+  height: 75%;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -19,14 +28,19 @@ body {
   gap: 1em;
 }
 .container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   width: 50%;
   border-radius: 0.5rem;
   border-style: solid;
   border-width: medium;
   padding: 0.25rem;
+  /* justify-content: space-between; */
 }
 #form {
   display: flex;
+  height: 60%;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
@@ -36,6 +50,29 @@ body {
 }
 .output {
   background-color: black;
-  min-height: 150px;
+  min-height: 40%;
   border-radius: 0.25rem;
+  color: white;
+}
+.heading {
+  text-align: center;
+}
+button {
+  margin-top: 10px;
+  align-self: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  background-color: black;
+  color: #fff;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+pre {
+  padding: 0.5em;
 }
