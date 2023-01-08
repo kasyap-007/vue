@@ -1,28 +1,19 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
     <userInputOne />
+    <userInputTwo />
   </div>
 </template>
 
 <script>
 import userInputOne from './components/userInputOne.vue';
-
+import userInputTwo from './components/userInputTwo.vue';
+import './styles.css';
 export default {
   name: 'App',
   components: {
     userInputOne,
+    userInputTwo,
   },
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
