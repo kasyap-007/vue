@@ -16,6 +16,7 @@
         v-if="checkList.includes('partyid')"
         type="text"
         placeholder="party id"
+        v-model="partyid"
       />
       <label for="corelation">
         <input
@@ -28,6 +29,7 @@
         corelation ID
       </label>
       <input
+        v-model="corelation"
         v-if="checkList.includes('corelation')"
         type="text"
         placeholder="corelation"
@@ -43,6 +45,7 @@
         Date
       </label>
       <input
+        v-model="date"
         v-if="checkList.includes('date')"
         type="date"
         name=""
@@ -64,6 +67,7 @@
         v-if="checkList.includes('partition')"
         type="text"
         placeholder="partition"
+        v-model="partition"
       />
       <label for="offset">
         <input
@@ -76,28 +80,37 @@
         Offset
       </label>
       <input
+        v-model="offset"
         v-if="checkList.includes('offset')"
         type="text"
         placeholder="offset"
       />
       <button type="submit">Submit</button>
     </form>
+    <pre>
+    {{ userData }}
+  </pre
+    >
   </div>
 </template>
 
 <script>
-import { store } from '../store.js';
 export default {
   name: 'Checkbox',
 
   data() {
     return {
-      store,
+      party: '',
+      corelation: '',
+      date: '',
+      partition: '',
+      offset: '',
       minDate: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
         .toISOString()
         .split('T')[0],
       maxDate: new Date().toISOString().split('T')[0],
       checkList: [],
+      userData: {},
     };
   },
 };
