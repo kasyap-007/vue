@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <HelloWorld msg="Welcome to Your Vue.js App" />
-    <Checkbox />
+    <userInputOne />
   </div>
 </template>
 
 <script>
-import Checkbox from './components/Checkbox.vue';
+import userInputOne from './components/userInputOne.vue';
 
 export default {
   name: 'App',
   components: {
-    Checkbox,
+    userInputOne,
   },
 };
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>Vue</h1>
-    <form id="form">
+    <form id="form" @submit.prevent="submit">
       <label for="partyid">
         <input
           type="checkbox"
@@ -96,11 +96,11 @@
 
 <script>
 export default {
-  name: 'Checkbox',
+  name: 'userInputOne',
 
   data() {
     return {
-      party: '',
+      partyid: '',
       corelation: '',
       date: '',
       partition: '',
@@ -110,8 +110,20 @@ export default {
         .split('T')[0],
       maxDate: new Date().toISOString().split('T')[0],
       checkList: [],
-      userData: {},
+      userData: '',
     };
+  },
+  methods: {
+    submit() {
+      var data = {
+        partyid: this.partyid,
+        corelation: this.corelation,
+        date: this.date,
+        partition: this.partition,
+        offset: this.offset,
+      };
+      this.userData = data;
+    },
   },
 };
 </script>
