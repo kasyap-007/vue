@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <userInputOne />
-    <userInputTwo />
+    <div id="parent">
+      <userInputOne />
+      <userInputTwo />
+    </div>
   </div>
 </template>
 

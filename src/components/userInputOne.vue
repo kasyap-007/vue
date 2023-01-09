@@ -1,92 +1,94 @@
 <template>
   <div class="container">
-    <h1>User Input One</h1>
-    <form id="form" @submit.prevent="submit">
-      <label for="partyid">
+    <div class="header">
+      <h1>User Input One</h1>
+      <form id="form" @submit.prevent="submit">
+        <label for="partyid">
+          <input
+            type="checkbox"
+            v-model="checkList"
+            name="partyid"
+            value="partyid"
+            id="partyid"
+          />
+          Party ID
+        </label>
         <input
-          type="checkbox"
-          v-model="checkList"
-          name="partyid"
-          value="partyid"
-          id="partyid"
+          v-if="checkList.includes('partyid')"
+          type="text"
+          placeholder="party id"
+          v-model="partyid"
         />
-        Party ID
-      </label>
-      <input
-        v-if="checkList.includes('partyid')"
-        type="text"
-        placeholder="party id"
-        v-model="partyid"
-      />
-      <label for="corelation">
+        <label for="corelation">
+          <input
+            type="checkbox"
+            v-model="checkList"
+            value="corelation"
+            name="corelation"
+            id="corelation"
+          />
+          corelation ID
+        </label>
         <input
-          type="checkbox"
-          v-model="checkList"
-          value="corelation"
-          name="corelation"
-          id="corelation"
+          v-model="corelation"
+          v-if="checkList.includes('corelation')"
+          type="text"
+          placeholder="corelation"
         />
-        corelation ID
-      </label>
-      <input
-        v-model="corelation"
-        v-if="checkList.includes('corelation')"
-        type="text"
-        placeholder="corelation"
-      />
-      <label for="date">
+        <label for="date">
+          <input
+            value="date"
+            type="checkbox"
+            v-model="checkList"
+            name="date"
+            id="date"
+          />
+          Date
+        </label>
         <input
-          value="date"
-          type="checkbox"
-          v-model="checkList"
-          name="date"
-          id="date"
+          v-model="date"
+          v-if="checkList.includes('date')"
+          type="date"
+          name=""
+          id=""
+          :max="maxDate"
+          :min="minDate"
         />
-        Date
-      </label>
-      <input
-        v-model="date"
-        v-if="checkList.includes('date')"
-        type="date"
-        name=""
-        id=""
-        :max="maxDate"
-        :min="minDate"
-      />
-      <label for="partition">
+        <label for="partition">
+          <input
+            value="partition"
+            type="checkbox"
+            v-model="checkList"
+            name="partition"
+            id="partition"
+          />
+          Partition
+        </label>
         <input
-          value="partition"
-          type="checkbox"
-          v-model="checkList"
-          name="partition"
-          id="partition"
+          v-if="checkList.includes('partition')"
+          type="text"
+          placeholder="partition"
+          v-model="partition"
         />
-        Partition
-      </label>
-      <input
-        v-if="checkList.includes('partition')"
-        type="text"
-        placeholder="partition"
-        v-model="partition"
-      />
-      <label for="offset">
+        <label for="offset">
+          <input
+            value="offset"
+            type="checkbox"
+            v-model="checkList"
+            name="offset"
+            id="offset"
+          />
+          Offset
+        </label>
         <input
-          value="offset"
-          type="checkbox"
-          v-model="checkList"
-          name="offset"
-          id="offset"
+          v-model="offset"
+          v-if="checkList.includes('offset')"
+          type="text"
+          placeholder="offset"
         />
-        Offset
-      </label>
-      <input
-        v-model="offset"
-        v-if="checkList.includes('offset')"
-        type="text"
-        placeholder="offset"
-      />
-      <button type="submit">Submit</button>
-    </form>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
     <pre class="output">
     <span>Output</span>
     {{ userData }}

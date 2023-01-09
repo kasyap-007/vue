@@ -11,7 +11,7 @@
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,9 +38,12 @@
   padding: 0.25rem;
   /* justify-content: space-between; */
 }
+.header {
+  height: 60%;
+}
 #form {
   display: flex;
-  height: 60%;
+  height: 100%;
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
@@ -75,4 +78,13 @@ button {
 
 pre {
   padding: 0.5em;
+}
+
+@media screen and (max-width: 550px) {
+  #parent {
+    flex-direction: column;
+  }
+  .container {
+    width: 100%;
+  }
 }
